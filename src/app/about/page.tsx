@@ -37,7 +37,6 @@ export default function AboutPage() {
         <main className="relative min-h-screen bg-[#020508] selection:bg-white/20 selection:text-white flex flex-col pt-32">
             <Navbar />
 
-            {/* Hero / Why We Exist */}
             <section className="relative w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-24 md:py-32">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -58,9 +57,7 @@ export default function AboutPage() {
                 </motion.div>
             </section>
 
-            {/* Our Vision / The Dark Split */}
             <section className="relative w-full bg-[#060C10]/40 border-y border-white/[0.02] py-32 md:py-48 mt-12 overflow-hidden">
-                {/* Cinematic Blur Backdrop */}
                 <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[80vw] h-[80vw] md:w-[50vw] md:h-[50vw] bg-[#E5D0A1] blur-[200px] opacity-[0.03] rounded-full pointer-events-none" />
 
                 <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20">
@@ -83,7 +80,6 @@ export default function AboutPage() {
                             </p>
                         </div>
 
-                        {/* Abstract Graphic Representation */}
                         <div className="relative aspect-square w-full max-w-[500px] mx-auto rounded-full border border-white/[0.05] bg-gradient-to-br from-white/[0.02] to-transparent p-8 flex items-center justify-center">
                             <div className="absolute inset-x-0 h-[1px] bg-white/[0.05] top-1/2 -translate-y-1/2" />
                             <div className="absolute inset-y-0 w-[1px] bg-white/[0.05] left-1/2 -translate-x-1/2" />
@@ -94,7 +90,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Community Values Grid */}
             <section className="relative w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-32 md:py-48">
                 <div className="text-center mb-20 md:mb-32">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
@@ -129,7 +124,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Final Routing */}
             <FinalCTA />
             <Footer />
         </main>

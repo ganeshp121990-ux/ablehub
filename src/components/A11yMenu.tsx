@@ -21,7 +21,6 @@ export default function A11yMenu() {
     const { state, toggleSetting, resetSettings, isOpen, setIsOpen } = useA11y();
     const menuRef = useRef<HTMLDivElement>(null);
 
-    // Trap focus when menu is open
     useEffect(() => {
         if (isOpen && menuRef.current) {
             const focusableElements = menuRef.current.querySelectorAll(
@@ -46,7 +45,6 @@ export default function A11yMenu() {
 
     return (
         <>
-            {/* Floating Action Button */}
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle Accessibility Menu"
@@ -58,7 +56,6 @@ export default function A11yMenu() {
                 <Accessibility size={32} />
             </motion.button>
 
-            {/* Expanded Glass Panel */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -72,7 +69,6 @@ export default function A11yMenu() {
                         aria-modal="true"
                         aria-label="Accessibility Settings"
                     >
-                        {/* Header */}
                         <div className="flex items-center justify-between p-6 border-b border-white/[0.05]">
                             <div className="flex items-center gap-3">
                                 <Accessibility size={20} className="text-[#82C3D7]" />
@@ -87,7 +83,6 @@ export default function A11yMenu() {
                             </button>
                         </div>
 
-                        {/* Scrollable Toggles */}
                         <div className="p-4 flex flex-col gap-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
                             {toggleButtons.map((btn) => {
                                 const isActive = state[btn.key as keyof typeof state];
@@ -104,7 +99,6 @@ export default function A11yMenu() {
                                                 {btn.label}
                                             </span>
                                         </div>
-                                        {/* Switch UI */}
                                         <div className={`relative z-10 w-10 h-6 rounded-full transition-colors duration-300 ${isActive ? "bg-[#82C3D7]" : "bg-white/[0.1]"}`}>
                                             <div className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform duration-300 ${isActive ? "translate-x-4 shadow-sm" : "translate-x-0"}`} />
                                         </div>
@@ -113,7 +107,6 @@ export default function A11yMenu() {
                             })}
                         </div>
 
-                        {/* Footer / Reset */}
                         <div className="p-4 border-t border-white/[0.05] bg-white/[0.01]">
                             <button
                                 onClick={resetSettings}

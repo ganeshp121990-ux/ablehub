@@ -33,7 +33,6 @@ export default function SafetyFeatures() {
     return (
         <section className="relative w-full py-24 md:py-40 bg-[#020508] overflow-hidden flex flex-col items-center">
 
-            {/* Container with a majestic, subtle glowing border */}
             <div className="relative z-10 w-full max-w-[1440px] px-6 sm:px-8 md:px-20 mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -42,13 +41,10 @@ export default function SafetyFeatures() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="relative group w-full rounded-[2.5rem] sm:rounded-[4rem] bg-[#060C10]/40 border border-white/[0.05] p-10 md:p-16 lg:p-24 overflow-hidden backdrop-blur-xl"
                 >
-                    {/* Subtle Hover Glow Inside Container */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
-                    {/* Grid Layout: Text Left, Visual/Features Right */}
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-                        {/* Left: Text Content */}
                         <div className="flex flex-col">
                             <span className="inline-flex items-center gap-2 py-1.5 px-3.5 w-max rounded-full bg-white/[0.03] border border-white/[0.08] text-white/60 text-[11px] uppercase tracking-[0.25em] font-semibold mb-8">
                                 <ShieldCheck size={14} className="text-[#82C3D7]" />
@@ -62,9 +58,7 @@ export default function SafetyFeatures() {
                             </p>
                         </div>
 
-                        {/* Right: Feature Grid (Visual Element) */}
                         <div className="relative">
-                            {/* Glowing Ambient Backdrop for the Features */}
                             <div className="absolute inset-0 bg-[#82C3D7] blur-[120px] opacity-[0.03] rounded-full pointer-events-none"></div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">

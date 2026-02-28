@@ -9,7 +9,6 @@ export default function AccessibilityPage() {
         <main className="relative min-h-screen bg-[#020508] selection:bg-white/20 selection:text-white flex flex-col pt-32">
             <Navbar />
 
-            {/* Hero Section */}
             <section className="relative w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-24 md:py-32">
                 <div className="flex flex-col max-w-4xl">
                     <span className="inline-block py-1.5 px-4 w-max rounded-full bg-white/[0.03] border border-white/[0.05] text-[#E5D0A1]/80 text-[11px] uppercase tracking-[0.3em] font-medium mb-8">
@@ -25,7 +24,6 @@ export default function AccessibilityPage() {
                 </div>
             </section>
 
-            {/* Detail Grid */}
             <section className="relative w-full border-t border-white/[0.05] bg-[#060C10]/40">
                 <div className="absolute inset-0 bg-[#E5D0A1] blur-[150px] opacity-[0.02] pointer-events-none" />
 
@@ -74,7 +72,6 @@ export default function AccessibilityPage() {
                 </div>
             </section>
 
-            {/* Support Contact Component */}
             <section className="relative w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-24">
                 <div className="w-full rounded-[3rem] bg-gradient-to-br from-white/[0.02] to-transparent border border-white/[0.05] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 group">
                     <div className="flex flex-col max-w-xl">

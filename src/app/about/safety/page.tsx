@@ -9,7 +9,6 @@ export default function SafetyPage() {
         <main className="relative min-h-screen bg-[#020508] selection:bg-white/20 selection:text-white flex flex-col pt-32">
             <Navbar />
 
-            {/* Hero Section */}
             <section className="relative w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-24 md:py-32">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-[#1a2936] blur-[250px] opacity-[0.03] pointer-events-none rounded-full" />
 
@@ -27,7 +26,6 @@ export default function SafetyPage() {
                 </div>
             </section>
 
-            {/* Defensive Pillars Grid */}
             <section className="relative w-full border-t border-white/[0.05] bg-[#060C10]/60">
                 <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-32 grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
 
@@ -74,7 +72,6 @@ export default function SafetyPage() {
                 </div>
             </section>
 
-            {/* Protective Block Line */}
             <section className="relative w-full border-t border-white/[0.05] py-24 px-6 md:px-20 text-center flex flex-col items-center">
                 <h3 className="text-2xl font-light text-white/50 mb-6 max-w-2xl">
                     Platform integrity must be absolute. By continuing, you agree strictly to our uncompromising code of conduct.

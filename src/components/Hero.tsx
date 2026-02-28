@@ -10,19 +10,14 @@ export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
   const router = useRouter();
 
-  // Track scroll position of the window to scrub the Hero's scale and opacity
   const { scrollY } = useScroll();
 
-  // As user scrolls from 0px to 800px down, scale the Hero from 1 to 0.85
   const scale = useTransform(scrollY, [0, 800], [1, 0.85]);
 
-  // Rotate top of Hero backward into 3D space
   const rotateX = useTransform(scrollY, [0, 800], [0, 20]);
 
-  // As user scrolls from 0px to 800px, fade the Hero from 1 to 0
   const opacity = useTransform(scrollY, [0, 800], [1, 0]);
 
-  // Slightly brighten the background video mix-blend as they scroll
   const videoBrightness = useTransform(scrollY, [0, 800], [1, 1.4]);
 
   const containerVariants = {
@@ -43,14 +38,8 @@ export default function Hero() {
   };
 
   return (
-    // The wrapper acts as the sticky constraint, holding the Hero to the top of the viewport
     <section ref={heroRef} className="sticky top-0 w-full h-[100vh] min-h-[800px] flex items-center justify-center overflow-hidden bg-[#020508]">
 
-      {/* 
-        This is the actual scrubbed container. It scales down, rotates backward smoothly,
-        and fades out, giving the cinematic illusion that it is sinking into the background 
-        while the next section rises over it.
-      */}
       <motion.div
         style={{
           scale,
@@ -61,7 +50,6 @@ export default function Hero() {
         }}
         className="relative w-full h-full flex items-center justify-center will-change-transform"
       >
-        {/* Cinematic Background Video Layer */}
         <div className="absolute inset-0 z-0 bg-[#060C10]">
           <motion.video
             style={{ filter: useTransform(videoBrightness, v => `brightness(${v})`) }}
@@ -75,15 +63,12 @@ export default function Hero() {
             <source src="/backgourndvideo.mp4" type="video/mp4" />
           </motion.video>
 
-          {/* Premium Dark Studio Vignette & Gradients */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#020508]/95 via-[#060C10]/80 to-[#03070A]/95 mix-blend-multiply"></div>
           <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-[#060C10] via-[#060C10]/80 to-transparent"></div>
 
-          {/* Subtle Ambient Light Wash */}
           <div className="absolute top-[-10%] right-[-5%] w-[60vw] h-[60vw] bg-[#91C3D4] blur-[160px] opacity-[0.06] rounded-full pointer-events-none mix-blend-screen"></div>
           <div className="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[#E5D0A1] blur-[150px] opacity-[0.03] rounded-full pointer-events-none mix-blend-screen"></div>
 
-          {/* Subtle Noise Grain for Cinematic Depth */}
           <div
             className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
             style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E")' }}
@@ -98,10 +83,8 @@ export default function Hero() {
             animate="show"
           >
 
-            {/* Subheadline: Ultra-Premium Glass Pill */}
             <motion.div variants={itemVariants} className="mb-10 sm:mb-14">
               <div className="group relative inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-700 hover:border-white/20 hover:bg-white/[0.04]">
-                {/* Subtle sweep glare */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent -translate-x-full group-hover:animate-[glare_2s_ease-out_infinite]"></div>
 
                 <span className="relative flex h-1.5 w-1.5">
@@ -114,7 +97,6 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Main Headline: Massive Scale & Perfect Tracking */}
             <motion.h1
               variants={itemVariants}
               className="text-[15vw] sm:text-[13vw] md:text-[10rem] lg:text-[12rem] font-bold tracking-[-0.05em] leading-[0.85] text-[#FFFFFF] pb-2"
@@ -122,7 +104,6 @@ export default function Hero() {
               AbleHub
             </motion.h1>
 
-            {/* Supporting Text: Measured, Minimal, Elegant */}
             <motion.p
               variants={itemVariants}
               className="mt-8 md:mt-12 max-w-[85%] sm:max-w-xl md:max-w-2xl text-base sm:text-lg md:text-[1.2rem] leading-[1.8] text-[#FFFFFF]/50 font-light"
@@ -130,12 +111,10 @@ export default function Hero() {
               A thoughtfully designed, accessibility-first community where people with disabilities build meaningful friendships and connect with absolute confidence.
             </motion.p>
 
-            {/* CTAs: 25K Studio Tier Glassmorphism */}
             <motion.div
               variants={itemVariants}
               className="mt-14 md:mt-20 flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto"
             >
-              {/* Primary Action */}
               <button
                 onClick={() => router.push('/join')}
                 className="group relative w-full sm:w-auto px-10 py-4 overflow-hidden rounded-full border border-white/20 bg-white/[0.05] backdrop-blur-xl transition-all duration-700 hover:border-white/40 hover:bg-white/[0.08] hover:scale-[1.02]"
@@ -151,7 +130,6 @@ export default function Hero() {
                 </span>
               </button>
 
-              {/* Secondary Action */}
               <button
                 onClick={() => router.push('/about')}
                 className="group relative w-full sm:w-auto px-10 py-4 rounded-full border border-transparent transition-all duration-700 hover:bg-white/[0.03] hover:border-white/10"

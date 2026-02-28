@@ -8,7 +8,6 @@ export default function PrivacyPage() {
             <Navbar />
 
             <div className="flex-grow flex flex-col max-w-[900px] mx-auto px-6 sm:px-12 py-24 md:py-32 w-full">
-                {/* Document Header */}
                 <div className="mb-20">
                     <span className="inline-block py-1.5 px-4 w-max rounded-full bg-white/[0.03] border border-white/[0.05] text-[#82C3D7]/70 text-[11px] uppercase tracking-[0.3em] font-medium mb-8">
                         Legal Repository
@@ -17,9 +16,7 @@ export default function PrivacyPage() {
                     <p className="text-white/40 text-sm font-medium tracking-widest uppercase mb-4">Last Updated: October 24, 2026</p>
                 </div>
 
-                {/* Editorial Body */}
                 <div className="relative border-l border-white/[0.05] pl-8 md:pl-12 lg:pl-16">
-                    {/* Glowing Reading Tracker Line */}
                     <div className="absolute top-0 left-[-1px] w-[2px] h-32 bg-gradient-to-b from-[#82C3D7]/50 to-transparent shadow-[0_0_15px_rgba(130,195,215,0.3)]" />
 
                     <div className="prose prose-invert max-w-none prose-p:text-white/40 prose-p:text-lg md:prose-p:text-xl prose-p:leading-[2] prose-p:font-light prose-h2:text-white prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-h2:mt-16 prose-h2:mb-8">

@@ -8,13 +8,11 @@ const MARQUEE_TEXT = "• CONNECTION • ACCESSIBILITY • COMMUNITY • INCLUSI
 export default function TransitionBanner() {
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // Track scroll progress purely within this component's viewport
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start end", "end start"],
     });
 
-    // 1. The Glowing Line animation: draws downward as user scrolls past
     const lineHeight = useSpring(
         useTransform(scrollYProgress, [0.1, 0.4], ["0%", "100%"]),
         { stiffness: 100, damping: 30, restDelta: 0.001 }
@@ -22,7 +20,6 @@ export default function TransitionBanner() {
 
     const lineOpacity = useTransform(scrollYProgress, [0.1, 0.2, 0.8, 0.9], [0, 1, 1, 0]);
 
-    // 2. The Marquee Parallax: speeds up slightly on scroll
     const marqueeX = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
     return (
@@ -30,16 +27,13 @@ export default function TransitionBanner() {
             ref={containerRef}
             className="relative w-full h-[400px] bg-[#020508] flexflex-col items-center justify-center overflow-hidden"
         >
-            {/* Cinematic Center Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[200px] bg-[#E5D0A1] blur-[120px] opacity-[0.03] rounded-full pointer-events-none"></div>
 
-            {/* INFINITE MARQUEE */}
             <div className="absolute top-1/2 -translate-y-1/2 w-full flex whitespace-nowrap overflow-hidden opacity-30 mix-blend-screen pointer-events-none">
                 <motion.div
                     style={{ x: marqueeX }}
                     className="flex whitespace-nowrap"
                 >
-                    {/* Duplicate text 4 times for seamless infinite feel across ultra-wides */}
                     {[...Array(4)].map((_, i) => (
                         <span
                             key={i}
@@ -52,7 +46,6 @@ export default function TransitionBanner() {
                 </motion.div>
             </div>
 
-            {/* GLOWING SCROLL LINE */}
             <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-white/[0.05] pointer-events-none">
                 <motion.div
                     className="w-full bg-gradient-to-b from-transparent via-white to-transparent shadow-[0_0_15px_rgba(255,255,255,0.8)]"
@@ -63,7 +56,6 @@ export default function TransitionBanner() {
                 />
             </div>
 
-            {/* Fading Edges to blend into sections */}
             <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#060C10] to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#020508] to-transparent pointer-events-none"></div>
 

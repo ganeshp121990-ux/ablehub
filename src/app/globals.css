@@ -28,11 +28,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* =========================================
-   PHASE 4: ACCESSIBILITY OVERRIDES
-   ========================================= */
 
-/* 1. Large Text */
+
+/*  Large Text */
 body.a11y-large-text {
   font-size: 110%;
 }
@@ -44,7 +42,7 @@ body.a11y-large-text p {
   transform-origin: left top;
 }
 
-/* 2. High Contrast */
+/*  High Contrast */
 body.a11y-high-contrast {
   --background: #000000;
   --foreground: #FFFFFF;
@@ -70,7 +68,7 @@ body.a11y-high-contrast .text-white\/70 {
   opacity: 1 !important;
 }
 
-/* 3. Highlight Links */
+/*  Highlight Links */
 body.a11y-highlight-links a,
 body.a11y-highlight-links button {
   text-decoration: underline !important;
@@ -79,13 +77,13 @@ body.a11y-highlight-links button {
   text-underline-offset: 4px !important;
 }
 
-/* 4. Pause Animations */
+/*  Pause Animations */
 body.a11y-pause-animations * {
   animation: none !important;
   transition: none !important;
 }
 
-/* 5. Large Cursor */
+/*  Large Cursor */
 body.a11y-large-cursor * {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2"><path d="M4 4l16 16m0-16L4 20" /></svg>') 16 16, auto !important;
 }
@@ -95,7 +93,7 @@ body.a11y-large-cursor button {
   cursor: pointer !important;
 }
 
-/* 6. Line Height Adjustment */
+/*  Line Height Adjustment */
 body.a11y-line-height {
   line-height: 2 !important;
 }
@@ -108,14 +106,14 @@ body.a11y-line-height h3 {
   line-height: 2 !important;
 }
 
-/* 7. Dyslexia Font */
+/*  Dyslexia Font */
 body.a11y-dyslexia * {
   font-family: 'Comic Sans MS', 'OpenDyslexic', 'Arial', sans-serif !important;
   letter-spacing: 0.1em !important;
   word-spacing: 0.2em !important;
 }
 
-/* 8. Hide Images */
+/*  Hide Images */
 body.a11y-hide-images img,
 body.a11y-hide-images video,
 body.a11y-hide-images svg:not(.lucide) {
@@ -123,7 +121,7 @@ body.a11y-hide-images svg:not(.lucide) {
   visibility: hidden !important;
 }
 
-/* 9. Warm Light Mode */
+/*  Warm Light Mode */
 body.a11y-light-mode {
   --background: #FDFBF7;
   /* Warm cream paper */
@@ -161,7 +159,7 @@ body.a11y-light-mode .bg-\[\#060C10\]\/95,
 body.a11y-light-mode .bg-\[\#020508\]\/95,
 body.a11y-light-mode .bg-\[\#020508\] {
   background-color: #F4F1EA !important;
-  /* Slightly darker warm section backgrounds */
+
 }
 
 body.a11y-light-mode .bg-white\/\[0\.01\],
@@ -169,19 +167,19 @@ body.a11y-light-mode .bg-white\/\[0\.02\],
 body.a11y-light-mode .bg-white\/\[0\.03\],
 body.a11y-light-mode .bg-white\/\[0\.05\] {
   background-color: rgba(0, 0, 0, 0.04) !important;
-  /* Invert subtle pill backgrounds */
+
 }
 
 body.a11y-light-mode .text-\[\#E5D0A1\],
 body.a11y-light-mode .text-\[\#E5D0A1\]\/80,
 body.a11y-light-mode .text-\[\#E5D0A1\]\/70 {
   color: #C19A5B !important;
-  /* Darken the bronze/gold for contrast on light BG */
+
 }
 
 body.a11y-light-mode .text-\[\#82C3D7\],
 body.a11y-light-mode .text-\[\#82C3D7\]\/80,
 body.a11y-light-mode .text-\[\#82C3D7\]\/70 {
   color: #2B7A94 !important;
-  /* Darken teal for contrast */
+
 }

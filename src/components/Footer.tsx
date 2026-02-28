@@ -30,14 +30,12 @@ export default function Footer() {
     return (
         <footer className="relative w-full bg-[#020508] border-t border-white/[0.05] overflow-hidden">
 
-            {/* Subtle Top Glow to blend with FinalCTA */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-white/[0.05] to-transparent" />
 
             <div className="relative w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 pt-20 md:pt-32 pb-10">
 
                 <div className="grid grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-20 md:mb-32">
 
-                    {/* Brand Column (takes up 2 cols on lg screens) */}
                     <div className="col-span-2 lg:col-span-2 flex flex-col pr-8">
                         <Link href="/" className="inline-block mb-6">
                             <span className="text-2xl font-bold tracking-tight text-white hover:text-white/80 transition-colors">
@@ -49,7 +47,6 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    {/* Links Columns */}
                     {Object.entries(FOOTER_LINKS).map(([category, links]) => (
                         <div key={category} className="col-span-1 flex flex-col">
                             <h4 className="text-white text-sm font-semibold tracking-[0.15em] uppercase mb-6">
@@ -72,7 +69,6 @@ export default function Footer() {
                     ))}
                 </div>
 
-                {/* Legal Bottom Strip */}
                 <div className="pt-8 flex flex-col md:flex-row items-center justify-between border-t border-white/[0.05] gap-4">
                     <p className="text-white/30 text-xs tracking-wider">
                         &copy; {new Date().getFullYear()} AbleHub Inc. All rights reserved.

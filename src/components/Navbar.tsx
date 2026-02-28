@@ -2,17 +2,19 @@
 
 import React, { useState } from "react";
 import { motion, useScroll, useMotionValueEvent, Easing } from "framer-motion";
-import { Users, Heart, Info, Mail } from "lucide-react";
+import { Users, Heart, Info, Mail, Home, Lightbulb } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const LOGO_SOURCE = "/ablehub-transparent.png";
 
 const NAV_ITEMS = [
-  { label: "About", icon: Info, href: "/about" },
+  { label: "Home", icon: Home, href: "/" },
   { label: "Feed", icon: Users, href: "/feed" },
-  { label: "Contact", icon: Mail, href: "/contact" },
   { label: "Join", icon: Heart, href: "/join" },
+  { label: "About", icon: Info, href: "/about" },
+  { label: "How It Works", icon: Lightbulb, href: "/how-it-works" },
+  { label: "Contact", icon: Mail, href: "/contact" },
 ];
 
 const EASE_OS: Easing = [0.22, 1, 0.36, 1];
@@ -39,7 +41,6 @@ export default function Navbar() {
     >
       <div className="max-w-[1920px] mx-auto px-6 sm:px-12 md:px-24 h-24 flex items-center justify-between">
 
-        {/* LOGO - Minimalist Integration */}
         <button
           onClick={() => router.push("/")}
           className="relative flex items-center group active:scale-95 transition-transform duration-500"
@@ -57,7 +58,6 @@ export default function Navbar() {
           />
         </button>
 
-        {/* LINKS - Razor Sharp Architecture */}
         <div className="flex items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16">
           {NAV_ITEMS.map((item) => (
             <a
@@ -66,7 +66,6 @@ export default function Navbar() {
               className="group relative py-2 text-white/50 hover:text-white transition-colors duration-500 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] sm:tracking-[0.4em] font-medium"
             >
               <span className="relative z-10">{item.label}</span>
-              {/* Extreme minimal ghost underline */}
               <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:w-full"></span>
             </a>
           ))}

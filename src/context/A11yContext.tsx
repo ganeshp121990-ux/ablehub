@@ -41,7 +41,6 @@ export function A11yProvider({ children }: { children: React.ReactNode }) {
     const [isOpen, setIsOpen] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
-    // Load from localStorage on mount
     useEffect(() => {
         setIsMounted(true);
         try {
@@ -54,7 +53,6 @@ export function A11yProvider({ children }: { children: React.ReactNode }) {
         }
     }, []);
 
-    // Save to localStorage & inject CSS classes on change
     useEffect(() => {
         if (!isMounted) return;
 
@@ -62,7 +60,6 @@ export function A11yProvider({ children }: { children: React.ReactNode }) {
 
         const body = document.body;
 
-        // Manage classes dynamically based on state
         state.largeText ? body.classList.add("a11y-large-text") : body.classList.remove("a11y-large-text");
         state.highContrast ? body.classList.add("a11y-high-contrast") : body.classList.remove("a11y-high-contrast");
         state.highlightLinks ? body.classList.add("a11y-highlight-links") : body.classList.remove("a11y-highlight-links");
