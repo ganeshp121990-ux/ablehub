@@ -11,6 +11,7 @@ interface A11yState {
     lineHeight: boolean;
     dyslexiaFont: boolean;
     hideImages: boolean;
+    lightMode: boolean;
 }
 
 const defaultState: A11yState = {
@@ -22,6 +23,7 @@ const defaultState: A11yState = {
     lineHeight: false,
     dyslexiaFont: false,
     hideImages: false,
+    lightMode: false,
 };
 
 interface A11yContextProps {
