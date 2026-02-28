@@ -28,7 +28,7 @@ export default function TrustSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.5, ease: EASE_ELITE }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
                     viewport={{ once: true }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
                 >
