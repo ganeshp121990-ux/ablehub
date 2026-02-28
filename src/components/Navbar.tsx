@@ -6,7 +6,7 @@ import { Users, Heart, Info, Mail, Home, Lightbulb } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const LOGO_SOURCE = "/ablehub-transparent1.png";
+const LOGO_SOURCE = "/ablehub-.png";
 
 const NAV_ITEMS = [
   { label: "Home", icon: Home, href: "/" },
